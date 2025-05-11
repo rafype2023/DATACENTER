@@ -13,7 +13,7 @@ function init() {
     // ... (Scene, Camera, Renderer, Controls, Lighting setup - NO CHANGES HERE) ...
     // ...
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xdddddd);
+    scene.background = new THREE.Color(0x87CEEB); 
 
     camera = new THREE.PerspectiveCamera(
         75,
@@ -22,7 +22,7 @@ function init() {
         1000
     );
     // Use the camera position you found worked best
-    camera.position.set(0, 1, 18); // Or your preferred values
+    camera.position.set(10, -1, 18); // Or your preferred values
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -111,18 +111,18 @@ function addHotpoints() {
         {
             position: new THREE.Vector3(2,10, -25.5), // X, Y, Z - YOU MUST ADJUST THESE!
             url: 'panorama.html?view=room1',
-            name: 'Entrance Hotpoint'
+            name: 'Data Center'
         },
         {
-            position: new THREE.Vector3(-2, 1.5, 1), // X, Y, Z - YOU MUST ADJUST THESE!
+            position: new THREE.Vector3(2, 1.5, -21), // X, Y, Z - YOU MUST ADJUST THESE!
             url: 'panorama.html?view=server_hall_A',
-            name: 'Server Hall A Hotpoint'
+            name: 'Entrance Facilities'
         }
         // Add more hotpoint objects as needed
     ];
 
-    const hotpointGeometry = new THREE.SphereGeometry(0.15, 16, 16); // Size of the sphere
-    const hotpointMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red color
+    const hotpointGeometry = new THREE.SphereGeometry(0.35, 16, 16); // Size of the sphere
+    const hotpointMaterial = new THREE.MeshBasicMaterial({ color: 0xff2200 }); // Red color
 
     hotpointData.forEach(hpData => {
         const hotpointMesh = new THREE.Mesh(hotpointGeometry, hotpointMaterial.clone()); // Use clone for material if you change colors later
